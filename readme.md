@@ -185,3 +185,59 @@ var server = http.createServer(function (req, res) {
 });
 
 ```
+
+## Mongo DB
+(mysql,microsoft sql server) etc are relation database management system have been for around 20 years. 
+
+#### Problem with RDBMS 
+Over the past few years the storage and consumption of data has sky rocketed beyond our imagination.
+All of this has given rise to a term `big data` which refers to the storage and processing of stream amount of data.
+The relational db like mysql is not suitable for handling extreme amount of data.
+
+Additionally the data these days does not confirm into being in a decided schema and since RDBMS requires you to have a fixed schema
+it does not fit well into a flexible development environment.
+
+So one of the best solution out there is a breed of nosql database `mongodb`.
+`mongo` derived from the word humongo (allows you to deal with humongous amount of data) in simple way.
+Instead of row and columns mongodb stores data in documents using key value pair.
+```
+{
+    "name":"selvesan",
+    "email":"dev.selvesan@gmail.com"
+}
+```
+This is known as Bson which is based like json and used like json
+
+#### Also supports various types of datatypes
+```
+    {
+        "name":['ram','shyam'],
+        "address":{...},{...} // one to many relationships.
+    }
+```
+
+#### Every records have unique id.
+```
+{
+    _id:ObjectId('....')
+}
+```
+##### Basic Terminology
+table   >     collection
+row     >     Document
+column  >    Fileds
+
+```
+    select * from table where condition
+    
+    db.table.find({
+        email:'john@gmail.com'
+    })
+    
+```
+
+
+* High performance reads and write.
+* Very highly & Easily scalable.
+* Document Database is schema less.
+* Json style documents
